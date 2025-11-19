@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+<head>
+    <title>Corrida - Projeto Bizurada</title>
+</head>
+<body>
+<h2>Corrida: <span th:text="${corrida.nome}">Corrida</span></h2>
+
+<p>Tempo restante: <span th:text="${tempoRestante}">0</span> segundos</p>
+
+<form th:action="@{/corrida/{id}/responder(id=${corrida.id})}" method="post">
+    <p>Pergunta <span th:text="${numeroPergunta}">1</span> de <span th:text="${totalPerguntas}">0</span>:</p>
+    <p th:text="${pergunta.enunciado}">Enunciado da pergunta </p>
+
+    <label>
+        <input type="radio" name="resposta" th:value="a" required />
+        <span th:text="${pergunta.alternativaA}">Alternativa A</span>
+    </label><br/>
+
+    <label>
+        <input type="radio" name="resposta" th:value="b"/>
+        <span th:text="${pergunta.alternativaB}">Alternativa B</span>
+    </label><br/>
+
+    <label>
+        <input type="radio" name="resposta" th:value="c"/>
+        <span th:text="${pergunta.alternativaC}">Alternativa C</span>
+    </label><br/>
+
+    <button type="submit">Responder</button>
+</form>
+</body>
+</html>

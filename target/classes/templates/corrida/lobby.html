@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+<head>
+    <title>Lobby - Projeto Bizurada</title>
+</head>
+<body>
+<h2>Olá, <span th:text="${username}">Usuário</span>!</h2>
+<p>Escolha uma corrida para participar:</p>
+<div>
+    <ul>
+        <li th:each="corrida : ${corridas}">
+            <a
+                th:href="@{/corridas/{id}(id=${corrida.id})}"
+                th:text="${corrida.nome}"
+            >Nome da Corrida</a>
+            - Tempo limite: <span th:text="${corrida.tempoLimite}">0</span> segundos
+        </li>
+    </ul>
+</div>
+<a href="/hackaton/auth/logout">Sair</a>
+</body>
+</html>

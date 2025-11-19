@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+<head>
+    <title>Ranking - Projeto Bizurada</title>
+</head>
+<body>
+<h2>Ranking das Corridas</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Posição</th>
+            <th>Nome</th>
+            <th>Pontos</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="resultado, iterStat : ${ranking}">
+            <td th:text="${iterStat.index + 1}">1</td>
+            <td th:text="${resultado.usuario}">Usuário</td>
+            <td th:text="${resultado.pontos}">0</td>
+        </tr>
+    </tbody>
+</table>
+
+<a href="/lobby">Voltar ao Lobby</a>
+</body>
+</html>

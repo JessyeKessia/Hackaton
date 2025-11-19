@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+<head>
+    <title>Resultado - Projeto Bizurada</title>
+</head>
+<body>
+<h2>Resultado da Corrida</h2>
+
+<p>Usuário: <span th:text="${username}">Usuário</span></p>
+<p>Pontos obtidos: <span th:text="${pontos}">0</span></p>
+<a href="/lobby">Voltar ao Lobby</a>
+</body>
+</html>
